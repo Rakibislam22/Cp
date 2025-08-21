@@ -56,24 +56,33 @@ const int MAX_A = 1'000'001;
 
 
 void solveByRakib() {
-    ll n;
-    cin>>n;
-    vll v;
-    ch = 1;
-    while()
-    for(int i=0; i<m; i++){
-        if(c[i] == 'D'){
-            a.insert(a.end(),b[i]);
-        }
-        if(c[i] == 'V'){    
-            a.insert(a.begin(),b[i]);
-        }
+    ll a,b;
+    cin>>a>>b;
+    vi a1,b1;
 
+    while(a){
+        a1.pb(a%10);
+        a /= 10;
+    }
+    while(b){
+        b1.pb(b%10);
+        b /= 10;
     }
 
-    cout<<a<<endl;
+    int c = 0;
 
+    for (int i = 0; i < b1.size() ; i++)
+    {
+        if(a1[i] + b1[i] > 9){
+            c = 1;
+            break;
+        }
+    }
     
+    if(c) cout<<"Hard";
+    else cout<<"Easy";
+
+
     
 }
 
@@ -81,7 +90,7 @@ int main() {
     fastio();
 
     int t = 1;
-    cin >> t;
+    //cin >> t;
     while (t--) solveByRakib();
 
     return 0;
